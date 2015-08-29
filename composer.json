@@ -1,0 +1,21 @@
+{
+    "name": "php-logger-old-interface",
+    "description": "Old interface for mougrim/php-logger",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mougrim",
+            "email": "rinat@mougrim.ru"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "mougrim/php-logger": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "Logger": ["src/", "src/appenders", "src/layouts"]
+        }
+    }
+}
