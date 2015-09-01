@@ -1,19 +1,19 @@
 <?php
-class LoggerHierarchy extends \Mougrim\Logger\LoggerHierarchy
+class LoggerPolicy extends \Mougrim\Logger\LoggerPolicy
 {
-    public function getAppender($name)
+    public static function setConfigurationErrorPolicy($policy)
     {
         try {
-            return parent::getAppender($name);
+            parent::setConfigurationErrorPolicy($policy);
         } catch (\Mougrim\Logger\LoggerConfigurationException $exception) {
             throw new LoggerConfigurationException($exception->getMessage(), $exception->getCode(), $exception);
         }
     }
 
-    public function getLayout($name)
+    public static function setIoErrorPolicy($policy)
     {
         try {
-            return parent::getLayout($name);
+            parent::setIoErrorPolicy($policy);
         } catch (\Mougrim\Logger\LoggerConfigurationException $exception) {
             throw new LoggerConfigurationException($exception->getMessage(), $exception->getCode(), $exception);
         }

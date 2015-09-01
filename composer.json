@@ -13,6 +13,11 @@
         "php": ">=5.5.0",
         "mougrim/php-logger": "dev-master"
     },
+    "require-dev": {
+        "ext-pcntl": "*",
+        "ext-runkit": "*",
+        "phpunit/phpunit": "3.7.*"
+    },
     "autoload": {
         "psr-0": {
             "Logger": ["src/", "src/appenders", "src/layouts"]
