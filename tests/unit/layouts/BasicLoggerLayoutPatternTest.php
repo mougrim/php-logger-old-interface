@@ -111,7 +111,7 @@ class BasicLoggerLayoutPatternTest extends BaseLoggerTestCase
 
     public function testErrorPatternGlobal()
     {
-        $this->setExpectedException('LoggerException');
+        $this->setExpectedException(\LoggerConfigurationException::class);
         new LoggerLayoutPattern('{global}');
     }
 

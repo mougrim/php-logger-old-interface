@@ -79,7 +79,7 @@ class LoggerConfiguratorTest extends BaseLoggerTestCase
 
     public function testInvalidLayout()
     {
-        $this->setExpectedException('LoggerException');
+        $this->setExpectedException(\LoggerConfigurationException::class);
         $hierarchy = new LoggerHierarchy();
         $configurator = new LoggerConfigurator();
         $configurator->configure($hierarchy, array(
@@ -91,7 +91,7 @@ class LoggerConfiguratorTest extends BaseLoggerTestCase
 
     public function testInvalidLayoutInAppenderEmpty()
     {
-        $this->setExpectedException('LoggerException');
+        $this->setExpectedException(\LoggerConfigurationException::class);
         $hierarchy = new LoggerHierarchy();
         $configurator = new LoggerConfigurator();
         $configurator->configure($hierarchy, array(
@@ -111,7 +111,7 @@ class LoggerConfiguratorTest extends BaseLoggerTestCase
 
     public function testInvalidLayoutInAppenderInvalidType()
     {
-        $this->setExpectedException('LoggerException');
+        $this->setExpectedException(\LoggerConfigurationException::class);
         $hierarchy = new LoggerHierarchy();
         $configurator = new LoggerConfigurator();
         $configurator->configure($hierarchy, array(
@@ -131,7 +131,7 @@ class LoggerConfiguratorTest extends BaseLoggerTestCase
 
     public function testInvalidAppender()
     {
-        $this->setExpectedException('LoggerException');
+        $this->setExpectedException(\LoggerConfigurationException::class);
         $hierarchy = new LoggerHierarchy();
         $configurator = new LoggerConfigurator();
         $configurator->configure($hierarchy, array(
@@ -149,7 +149,7 @@ class LoggerConfiguratorTest extends BaseLoggerTestCase
 
     public function testInvalidAppenderInLogger()
     {
-        $this->setExpectedException('LoggerException');
+        $this->setExpectedException(\LoggerConfigurationException::class);
         $hierarchy = new LoggerHierarchy();
         $configurator = new LoggerConfigurator();
         $configurator->configure($hierarchy, array(

@@ -32,7 +32,7 @@ class LoggerHierarchyTest extends BaseLoggerTestCase
 
     public function testGetAppenderNotExists()
     {
-        $this->setExpectedException('LoggerException');
+        $this->setExpectedException(\LoggerConfigurationException::class);
         $hierarchy = new LoggerHierarchy();
         $hierarchy->getAppender('new');
     }
@@ -48,7 +48,7 @@ class LoggerHierarchyTest extends BaseLoggerTestCase
 
     public function testGetLayoutNotExists()
     {
-        $this->setExpectedException('LoggerException');
+        $this->setExpectedException(\LoggerConfigurationException::class);
         $hierarchy = new LoggerHierarchy();
         $hierarchy->getLayout('new');
     }

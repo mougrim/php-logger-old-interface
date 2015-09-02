@@ -22,7 +22,7 @@ class LoggerAppenderSyslogTest extends BaseLoggerTestCase
 
     public function testErrorOpenSyslog()
     {
-        $this->setExpectedException(\Mougrim\Logger\LoggerException::class);
+        $this->setExpectedException(\LoggerIOException::class);
         $this->mockFunction('openlog', '', 'return false;');
 
         $appender = new LoggerAppenderSyslog('id', LOG_PID, 0);
@@ -55,19 +55,19 @@ class LoggerAppenderSyslogTest extends BaseLoggerTestCase
 
     public function testErrorInvalidOption()
     {
-        $this->setExpectedException('LoggerException');
+        $this->setExpectedException(\LoggerConfigurationException::class);
         LoggerAppenderSyslog::parseOptions('array');
     }
 
     public function testErrorBadType()
     {
-        $this->setExpectedException('LoggerException');
+        $this->setExpectedException(\LoggerConfigurationException::class);
         LoggerAppenderSyslog::parseOptions('STDOUT');
     }
 
     public function testErrorBadArgument()
     {
-        $this->setExpectedException('LoggerException');
+        $this->setExpectedException(\LoggerConfigurationException::class);
         LoggerAppenderSyslog::parseOptions(STDOUT);
     }
 

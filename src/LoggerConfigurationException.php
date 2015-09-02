@@ -1,2 +1,2 @@
 <?php
-class LoggerConfigurationException extends LoggerException {}
+class LoggerConfigurationException extends \Mougrim\Logger\LoggerConfigurationException {}
