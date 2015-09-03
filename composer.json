@@ -1,5 +1,5 @@
 {
-    "name": "php-logger-old-interface",
+    "name": "mougrim/php-logger-old-interface",
     "description": "Old interface for mougrim/php-logger",
     "type": "library",
     "license": "MIT",
