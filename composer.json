@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": ">=5.5.0",
-        "mougrim/php-logger": "dev-master"
+        "mougrim/php-logger": "2.*"
     },
     "require-dev": {
         "ext-pcntl": "*",
