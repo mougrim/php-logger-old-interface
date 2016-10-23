@@ -26,7 +26,13 @@ class LoggerAppenderStreamTest extends BaseLoggerTestCase
     public function testNotUseLock()
     {
         $GLOBALS['called']=false;
-        $this->mockFunction('flock', '', '$GLOBALS["called"]=true; return true;');
+        $this->mockFunction(
+            'flock',
+            function() {
+                $GLOBALS['called'] = true;
+                return true;
+            }
+        );
         $appender = new LoggerAppenderStream($this->logFile);
         $appender->setUseLock(false);
         $appender->write(Logger::INFO, 'ok');
@@ -38,7 +44,13 @@ class LoggerAppenderStreamTest extends BaseLoggerTestCase
     public function testNotUseLockShortMessage()
     {
         $GLOBALS['called']=false;
-        $this->mockFunction('flock', '', '$GLOBALS["called"]=true; return true;');
+        $this->mockFunction(
+            'flock',
+            function() {
+                $GLOBALS['called'] = true;
+                return true;
+            }
+        );
         $appender = new LoggerAppenderStream($this->logFile);
         $appender->setUseLock(true);
         $appender->setUseLockShortMessage(false);
@@ -50,7 +62,13 @@ class LoggerAppenderStreamTest extends BaseLoggerTestCase
     public function testUseLockShortMessage()
     {
         $GLOBALS['called'] = false;
-        $this->mockFunction('flock', '', '$GLOBALS["called"]=true; return true;');
+        $this->mockFunction(
+            'flock',
+            function() {
+                $GLOBALS['called'] = true;
+                return true;
+            }
+        );
         $appender = new LoggerAppenderStream($this->logFile);
         $appender->setUseLock(true);
         $appender->setUseLockShortMessage(false);

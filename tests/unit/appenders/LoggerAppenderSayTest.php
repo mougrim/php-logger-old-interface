@@ -10,7 +10,13 @@ class LoggerAppenderSayTest extends BaseLoggerTestCase
     public function testWrite()
     {
         $GLOBALS['say']=null;
-        $this->mockFunction('system', '$c', '$GLOBALS["say"]=$c;return "";');
+        $this->mockFunction(
+            'system',
+            function ($c) {
+                $GLOBALS['say'] = $c;
+                return '';
+            }
+        );
         $appender = new LoggerAppenderSay();
         $return = $appender->write(1, 'fuck, web site is down!');
         $this->assertTrue($return !== false);

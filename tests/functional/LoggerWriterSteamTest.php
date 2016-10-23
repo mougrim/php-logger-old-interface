@@ -31,7 +31,7 @@ class LoggerWriterSteamTest extends PHPUnit_Framework_TestCase
         foreach ($pids as $p) {
             pcntl_waitpid($p, $status);
         }
-        $this->lessThan(0.2, microtime(1) - $start);
+        $this->lessThan(0.4, microtime(1) - $start);
         $this->assertTrue(strlen($message) === 13001);
         $c = str_pad("", $count * $workers * strlen($message), $message);
         sleep(1);

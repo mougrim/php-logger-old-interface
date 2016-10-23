@@ -2,4 +2,7 @@ This project created for backward compatibility [mougrim/php-logger](https://git
 
 It can also be used if you want use logger classes without namespaces.
 
-[![Build Status](https://api.travis-ci.org/mougrim/php-logger-old-interface.png)](https://travis-ci.org/mougrim/php-logger-old-interface)
+[![Latest Stable Version](https://poser.pugx.org/mougrim/php-logger-old-interface/version)](https://packagist.org/packages/mougrim/php-logger-old-interface)
+[![Latest Unstable Version](https://poser.pugx.org/mougrim/php-logger-old-interface/v/unstable)](https://packagist.org/packages/mougrim/php-logger-old-interface)
+[![License](https://poser.pugx.org/mougrim/php-logger-old-interface/license)](https://packagist.org/packages/mougrim/php-logger-old-interface)
+[![Build Status](https://api.travis-ci.org/mougrim/php-logger-old-interface.png?branch=master)](https://travis-ci.org/mougrim/php-logger-old-interface)

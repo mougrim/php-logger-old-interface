@@ -66,7 +66,7 @@ class LoggerTest extends BaseLoggerTestCase
             $logger->info('test');
         }
         $end = microtime(1);
-        $this->assertLessThan(1.0, $end - $start, 'logger > root > stream');
+        $this->assertLessThan(2.0, $end - $start, 'logger > root > stream');
 
         $logger = Logger::getRootLogger();
         $start = microtime(1);
@@ -74,7 +74,7 @@ class LoggerTest extends BaseLoggerTestCase
             $logger->info('test');
         }
         $end = microtime(1);
-        $this->assertLessThan(1.0, $end - $start, 'root > stream');
+        $this->assertLessThan(2.0, $end - $start, 'root > stream');
 
         $appenders = Logger::getRootLogger()->getAppenders();
         $appender = $appenders[0];
@@ -83,6 +83,6 @@ class LoggerTest extends BaseLoggerTestCase
             $appender->append($logger, Logger::INFO, 'test', null);
         }
         $end = microtime(1);
-        $this->assertLessThan(1.0, $end - $start, 'stream');
+        $this->assertLessThan(2.0, $end - $start, 'stream');
     }
 }

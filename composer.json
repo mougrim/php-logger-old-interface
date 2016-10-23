@@ -15,12 +15,18 @@
     },
     "require-dev": {
         "ext-pcntl": "*",
-        "ext-runkit": "*",
-        "phpunit/phpunit": "3.7.*"
+        "phpunit/phpunit": "3.7.*",
+        "badoo/soft-mocks": "dev-forLogger"
     },
     "autoload": {
         "psr-0": {
             "Logger": ["src/", "src/appenders", "src/layouts"]
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:mougrim/soft-mocks.git"
+        }
+    ]
 }
